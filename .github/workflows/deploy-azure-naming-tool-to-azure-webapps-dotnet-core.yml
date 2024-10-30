@@ -81,7 +81,7 @@ jobs:
         run: dotnet publish -c Release -o ${{ github.workspace }}/myapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4.1.7
+        uses: actions/upload-artifact@v3
         with:
           name: .net-app
           path: ${{ github.workspace }}/myapp
@@ -101,7 +101,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v3
         with:
           name: .net-app
           path: ./downloaded_app  # Explicit download path for consistency
